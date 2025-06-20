@@ -1,10 +1,6 @@
 {
   "advices": [
     {
-      "advice": "Don't wear clean trousers when walking your dog in the park.",
-      "id": 4
-    },
-    {
       "advice": "When faced with a choice, do both.",
       "id": 5
     },
@@ -15,6 +11,10 @@
     {
       "advice": "Alway do anything for love, but don't do that.",
       "id": 7
+    },
+    {
+      "advice": "There is no reason at all to believe that White Wine is any different to water when it comes to removing Red Wine stains.",
+      "id": 8
     }
   ]
 }

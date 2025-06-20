@@ -1,27 +1,17 @@
-import { useState, useEffect } from "react";
-import { fetchSavedAdvices, deleteAdvice } from "../../services/adviceServices";
+import { deleteAdvice } from "../../services/adviceServices";
 import { HiOutlineTrash } from "react-icons/hi";
 import Button from "../Button/Button";
 import "./List.css"
 
-export default function List() {
-    const [advices, setAdvices] = useState([])
-
-    const getAdvices = async () => {
+export default function List({ advices, onAdviceRemoved }) {
+    const handleDelete = async (id) => {
         try {
-            const advices = await fetchSavedAdvices()
-            setAdvices(advices)
-            console.log("Advices: ", advices);
+            await deleteAdvice(id);
+            onAdviceRemoved(id);
         } catch (error) {
-            console.error("Error fetching advices:", error);
-            setAdvices([])
+            console.error("Error deleting advice:", error);
         }
     }
-
-    useEffect(() => {
-        getAdvices()
-    }, [])
-
 
     return (
         <div className="list-container">
@@ -30,10 +20,9 @@ export default function List() {
                 {advices.map(advice => (
                     <div key={advice.id} className="advice-item">
                         <p>"{advice.advice}"</p>
-                        <Button style={{ minWidth: "1.5rem" }} onClick={() => deleteAdvice(advice.id)}><HiOutlineTrash /></Button>
+                        <Button onClick={() => handleDelete(advice.id)}><HiOutlineTrash /></Button>
                     </div>
                 ))}
-                <Button onClick={getAdvices}>Refresh</Button>
             </div>
         </div>
     )
