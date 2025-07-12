@@ -9,12 +9,20 @@
       "id": 6
     },
     {
-      "advice": "Alway do anything for love, but don't do that.",
-      "id": 7
+      "advice": "Do not check work email on your days off.",
+      "id": 9
     },
     {
-      "advice": "There is no reason at all to believe that White Wine is any different to water when it comes to removing Red Wine stains.",
-      "id": 8
+      "advice": "If you don't want something to be public, don't post it on the Internet.",
+      "id": 10
+    },
+    {
+      "advice": "A problem shared is a problem halved.",
+      "id": 11
+    },
+    {
+      "advice": "Brush your teeth the moment you get up.",
+      "id": 12
     }
   ]
 }
